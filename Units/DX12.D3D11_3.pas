@@ -328,7 +328,8 @@ type
     TD3D11_FENCE_FLAG = (
         D3D11_FENCE_FLAG_NONE = $1,
         D3D11_FENCE_FLAG_SHARED = $2,
-        D3D11_FENCE_FLAG_SHARED_CROSS_ADAPTER = $4
+        D3D11_FENCE_FLAG_SHARED_CROSS_ADAPTER = $4,
+        D3D11_FENCE_FLAG_NON_MONITORED = $8
         );
 
     ID3D11DeviceContext3 = interface(ID3D11DeviceContext2)

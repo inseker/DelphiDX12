@@ -2273,10 +2273,11 @@ type
     end;
 
      {$IF FPC_FULLVERSION >= 30101}
-     { ID2D1RenderTargetHelper }
-     ID2D1RenderTargetHelper =  type helper for ID2D1RenderTarget
-         function CreateSolidColorBrush(const color:TD2D1_COLOR_F; out solidColorBrush:ID2D1SolidColorBrush):HRESULT; stdcall; overload;
-     end;
+    { ID2D1RenderTargetHelper }
+    ID2D1RenderTargetHelper = type helper for ID2D1RenderTarget
+        function CreateSolidColorBrush(const color: TD2D1_COLOR_F; out solidColorBrush: ID2D1SolidColorBrush): HRESULT; stdcall; overload;
+    end;
+
      {$ENDIF}
 
     ID2D1BitmapRenderTarget = interface(ID2D1RenderTarget)
@@ -3772,12 +3773,11 @@ end;
 
 { ID2D1RenderTargetHelper }
 {$IF FPC_FULLVERSION >= 30101}
-function ID2D1RenderTargetHelper.CreateSolidColorBrush(
-  const color: TD2D1_COLOR_F; out solidColorBrush: ID2D1SolidColorBrush
-  ): HRESULT; stdcall;
+function ID2D1RenderTargetHelper.CreateSolidColorBrush(const color: TD2D1_COLOR_F; out solidColorBrush: ID2D1SolidColorBrush): HRESULT; stdcall;
 begin
-    result:= CreateSolidColorBrush(color, nil, solidColorBrush);
- end;
+    Result := CreateSolidColorBrush(color, nil, solidColorBrush);
+end;
+
 {$ENDIF}
 
 { TD2D_SIZE_U }
