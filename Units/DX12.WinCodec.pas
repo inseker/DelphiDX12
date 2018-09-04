@@ -4,6 +4,8 @@ unit DX12.WinCodec;
 {$mode delphi}
 {$ENDIF}
 
+{$modeswitch typehelpers}
+
 interface
 
 {$Z4}
@@ -230,6 +232,7 @@ type
 
     TREFWICPixelFormatGUID = TGUID;
     //PREFWICPixelFormatGUID = ^TREFWICPixelFormatGUID;
+
 
     TWICPixelFormatGUID = TGUID;
     PWICPixelFormatGUID = ^TWICPixelFormatGUID;
@@ -807,7 +810,7 @@ type
         function GetPixelFormat(out pPixelFormat: TWICPixelFormatGUID): HResult; stdcall;
         function GetResolution(out pDpiX: double; out pDpiY: double): HResult; stdcall;
         function CopyPalette(pIPalette: IWICPalette): HResult; stdcall;
-        function CopyPixels(prc: PWICRect; cbStride: UINT; cbBufferSize: UINT; out pbBuffer: PBYTE): HResult; stdcall;
+        function CopyPixels(prc: PWICRect; cbStride: UINT; cbBufferSize: UINT; pbBuffer: PBYTE): HResult; stdcall;
     end;
 
 
@@ -1130,8 +1133,8 @@ type
         function CreateStream(out ppIWICStream: IWICStream): HResult; stdcall;
         function CreateColorContext(out ppIWICColorContext: IWICColorContext): HResult; stdcall;
         function CreateColorTransformer(out ppIWICColorTransform: IWICColorTransform): HResult; stdcall;
-        function CreateBitmap(uiWidth: UINT; uiHeight: UINT;
-            const pixelFormat: TREFWICPixelFormatGUID; option: TWICBitmapCreateCacheOption; out ppIBitmap: IWICBitmap): HResult; stdcall;
+        function CreateBitmap(uiWidth: UINT; uiHeight: UINT; const pixelFormat: TREFWICPixelFormatGUID;
+            option: TWICBitmapCreateCacheOption; out ppIBitmap: IWICBitmap): HResult; stdcall;
         function CreateBitmapFromSource(pIBitmapSource: IWICBitmapSource; option: TWICBitmapCreateCacheOption;
             out ppIBitmap: IWICBitmap): HResult; stdcall;
         function CreateBitmapFromSourceRect(pIBitmapSource: IWICBitmapSource; x: UINT; y: UINT; Width: UINT;
@@ -1224,8 +1227,8 @@ type
 function WICConvertBitmapSource(const dstFormat: TREFWICPixelFormatGUID; pISrc: IWICBitmapSource; ppIDst: IWICBitmapSource): HResult;
     stdcall; external WINCODEC_DLL;
 
-function WICCreateBitmapFromSection(Width: UINT; Height: UINT; const pixelFormat: TREFWICPixelFormatGUID; hSection: THANDLE;
-    stride: UINT; offset: UINT; out ppIBitmap: IWICBitmap): HResult; stdcall; external WINCODEC_DLL;
+function WICCreateBitmapFromSection(Width: UINT; Height: UINT; const pixelFormat: TREFWICPixelFormatGUID;
+    hSection: THANDLE; stride: UINT; offset: UINT; out ppIBitmap: IWICBitmap): HResult; stdcall; external WINCODEC_DLL;
 
 function WICCreateBitmapFromSectionEx(Width: UINT; Height: UINT; const pixelFormat: TREFWICPixelFormatGUID;
     hSection: THANDLE; stride: UINT; offset: UINT; desiredAccessLevel: TWICSectionAccessLevel; out ppIBitmap: IWICBitmap): HResult;
@@ -1243,5 +1246,6 @@ function WICMapSchemaToName(guidMetadataFormat: TGUID; pwzSchema: PWideChar; cch
 
 
 implementation
+
 
 end.

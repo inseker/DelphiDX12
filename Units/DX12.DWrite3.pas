@@ -55,6 +55,10 @@ const
     IID_IDWriteFontFallback1: TGUID = '{2397599D-DD0D-4681-BD6A-F4F31EAADE77}';
     IID_IDWriteFontList2: TGUID = '{C0763A34-77AF-445A-B735-08C37B0A5BF5}';
 
+    IID_IDWriteFontSet2: TGUID = '{DC7EAD19-E54C-43AF-B2DA-4E2B79BA3F7F}';
+    IID_IDWriteFontCollection3: TGUID = '{A4D055A6-F9E3-4E25-93B7-9E309F3AF8E9}';
+    IID_IDWriteFactory7: TGUID = '{35D0E0B3-9076-4D2E-A016-A91B568A06B4}';
+
 const
     /// A font resource could not be accessed because it was remote. This can happen
     /// when calling CreateFontFace on a non-local font or trying to measure/draw
@@ -859,7 +863,34 @@ type
             fontAxisValueCount: UINT32; out mappedLength: UINT32; out scale: single; out mappedFontFace: IDWriteFontFace5): HResult; stdcall;
     end;
 
-//{$endif} // NTDDI_VERSION >= NTDDI_WIN10_RS3
+    //{$endif} // NTDDI_VERSION >= NTDDI_WIN10_RS3
+
+    //{$if NTDDI_VERSION >= NTDDI_WIN10_RS4}
+
+    IDWriteFontSet2 = interface(IDWriteFontSet1)
+        ['{DC7EAD19-E54C-43AF-B2DA-4E2B79BA3F7F}']
+        function GetExpirationEvent(): HANDLE; stdcall;
+    end;
+
+
+
+    IDWriteFontCollection3 = interface(IDWriteFontCollection2)
+        ['{A4D055A6-F9E3-4E25-93B7-9E309F3AF8E9}']
+        function GetExpirationEvent(): HANDLE; stdcall;
+    end;
+
+
+
+    IDWriteFactory7 = interface(IDWriteFactory6)
+        ['{35D0E0B3-9076-4D2E-A016-A91B568A06B4}']
+        function GetSystemFontSet(includeDownloadableFonts: boolean; out fontSet: IDWriteFontSet2): HResult; stdcall;
+        function GetSystemFontCollection(includeDownloadableFonts: boolean; fontFamilyModel: TDWRITE_FONT_FAMILY_MODEL;
+            out fontCollection: IDWriteFontCollection3): HResult; stdcall;
+    end;
+
+
+//{$endif} // NTDDI_VERSION >= NTDDI_WIN10_RS4
+
 
 implementation
 
