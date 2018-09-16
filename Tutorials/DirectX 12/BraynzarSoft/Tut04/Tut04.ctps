@@ -4,14 +4,24 @@
     <PathDelim Value="\"/>
     <Version Value="11"/>
     <BuildModes Active="Debug"/>
+<<<<<<< HEAD
     <Units Count="17">
+=======
+    <Units Count="16">
+>>>>>>> b2cfe058bdb13a45eaa50038b619b945db579d3e
       <Unit0>
         <Filename Value="Tut04.ppr"/>
         <IsPartOfProject Value="True"/>
         <IsVisibleTab Value="True"/>
+<<<<<<< HEAD
         <TopLine Value="786"/>
         <CursorPos Y="800"/>
         <UsageCount Value="152"/>
+=======
+        <TopLine Value="10"/>
+        <CursorPos X="21" Y="19"/>
+        <UsageCount Value="148"/>
+>>>>>>> b2cfe058bdb13a45eaa50038b619b945db579d3e
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit0>
@@ -19,9 +29,15 @@
         <Filename Value="..\..\..\..\Units\DX12.D3D12.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="11"/>
+<<<<<<< HEAD
         <TopLine Value="3121"/>
         <CursorPos X="41" Y="3132"/>
         <UsageCount Value="152"/>
+=======
+        <TopLine Value="1326"/>
+        <CursorPos Y="1329"/>
+        <UsageCount Value="148"/>
+>>>>>>> b2cfe058bdb13a45eaa50038b619b945db579d3e
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit1>
@@ -31,26 +47,44 @@
         <EditorIndex Value="4"/>
         <TopLine Value="693"/>
         <CursorPos X="80" Y="704"/>
+<<<<<<< HEAD
         <UsageCount Value="147"/>
+=======
+        <UsageCount Value="143"/>
+>>>>>>> b2cfe058bdb13a45eaa50038b619b945db579d3e
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit2>
       <Unit3>
         <Filename Value="R:\sinnlosunit.pas"/>
         <IsPartOfProject Value="True"/>
+<<<<<<< HEAD
         <EditorIndex Value="13"/>
         <TopLine Value="5"/>
         <CursorPos Y="26"/>
         <UsageCount Value="66"/>
+=======
+        <EditorIndex Value="12"/>
+        <TopLine Value="10"/>
+        <CursorPos Y="26"/>
+        <UsageCount Value="62"/>
+>>>>>>> b2cfe058bdb13a45eaa50038b619b945db579d3e
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit3>
       <Unit4>
         <Filename Value="C:\codetyphon\fpcsrc\rtl\inc\resh.inc"/>
+<<<<<<< HEAD
         <EditorIndex Value="15"/>
         <TopLine Value="6"/>
         <CursorPos X="31" Y="14"/>
         <UsageCount Value="76"/>
+=======
+        <EditorIndex Value="14"/>
+        <TopLine Value="6"/>
+        <CursorPos X="31" Y="14"/>
+        <UsageCount Value="75"/>
+>>>>>>> b2cfe058bdb13a45eaa50038b619b945db579d3e
         <Loaded Value="True"/>
       </Unit4>
       <Unit5>
@@ -58,7 +92,11 @@
         <EditorIndex Value="9"/>
         <TopLine Value="581"/>
         <CursorPos X="18" Y="595"/>
+<<<<<<< HEAD
         <UsageCount Value="76"/>
+=======
+        <UsageCount Value="75"/>
+>>>>>>> b2cfe058bdb13a45eaa50038b619b945db579d3e
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit5>
@@ -67,7 +105,11 @@
         <EditorIndex Value="8"/>
         <TopLine Value="1025"/>
         <CursorPos X="6" Y="1027"/>
+<<<<<<< HEAD
         <UsageCount Value="76"/>
+=======
+        <UsageCount Value="75"/>
+>>>>>>> b2cfe058bdb13a45eaa50038b619b945db579d3e
         <Loaded Value="True"/>
       </Unit6>
       <Unit7>
@@ -75,7 +117,11 @@
         <UnitName Value="DX12.D3DX12"/>
         <EditorIndex Value="5"/>
         <CursorPos X="121" Y="1239"/>
+<<<<<<< HEAD
         <UsageCount Value="73"/>
+=======
+        <UsageCount Value="72"/>
+>>>>>>> b2cfe058bdb13a45eaa50038b619b945db579d3e
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit7>
@@ -84,7 +130,11 @@
         <EditorIndex Value="3"/>
         <TopLine Value="492"/>
         <CursorPos X="10" Y="503"/>
+<<<<<<< HEAD
         <UsageCount Value="73"/>
+=======
+        <UsageCount Value="72"/>
+>>>>>>> b2cfe058bdb13a45eaa50038b619b945db579d3e
         <Loaded Value="True"/>
       </Unit8>
       <Unit9>
@@ -92,7 +142,11 @@
         <EditorIndex Value="10"/>
         <TopLine Value="95"/>
         <CursorPos X="32" Y="18"/>
+<<<<<<< HEAD
         <UsageCount Value="72"/>
+=======
+        <UsageCount Value="71"/>
+>>>>>>> b2cfe058bdb13a45eaa50038b619b945db579d3e
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit9>
@@ -101,7 +155,11 @@
         <EditorIndex Value="2"/>
         <TopLine Value="139"/>
         <CursorPos X="51" Y="149"/>
+<<<<<<< HEAD
         <UsageCount Value="72"/>
+=======
+        <UsageCount Value="71"/>
+>>>>>>> b2cfe058bdb13a45eaa50038b619b945db579d3e
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit10>
@@ -110,15 +168,26 @@
         <EditorIndex Value="1"/>
         <TopLine Value="186"/>
         <CursorPos X="84" Y="196"/>
+<<<<<<< HEAD
         <UsageCount Value="66"/>
+=======
+        <UsageCount Value="65"/>
+>>>>>>> b2cfe058bdb13a45eaa50038b619b945db579d3e
         <Loaded Value="True"/>
       </Unit11>
       <Unit12>
         <Filename Value="..\..\..\..\Units\DX12.D3D11.pas"/>
+<<<<<<< HEAD
         <EditorIndex Value="14"/>
         <TopLine Value="34"/>
         <CursorPos Y="44"/>
         <UsageCount Value="53"/>
+=======
+        <EditorIndex Value="13"/>
+        <TopLine Value="34"/>
+        <CursorPos Y="44"/>
+        <UsageCount Value="52"/>
+>>>>>>> b2cfe058bdb13a45eaa50038b619b945db579d3e
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit12>
@@ -127,7 +196,11 @@
         <EditorIndex Value="6"/>
         <TopLine Value="850"/>
         <CursorPos X="11" Y="805"/>
+<<<<<<< HEAD
         <UsageCount Value="46"/>
+=======
+        <UsageCount Value="45"/>
+>>>>>>> b2cfe058bdb13a45eaa50038b619b945db579d3e
         <Loaded Value="True"/>
       </Unit13>
       <Unit14>
@@ -135,7 +208,11 @@
         <EditorIndex Value="7"/>
         <TopLine Value="604"/>
         <CursorPos Y="844"/>
+<<<<<<< HEAD
         <UsageCount Value="46"/>
+=======
+        <UsageCount Value="45"/>
+>>>>>>> b2cfe058bdb13a45eaa50038b619b945db579d3e
         <Loaded Value="True"/>
       </Unit14>
       <Unit15>
@@ -145,6 +222,7 @@
         <CursorPos X="56" Y="2310"/>
         <UsageCount Value="11"/>
       </Unit15>
+<<<<<<< HEAD
       <Unit16>
         <Filename Value="C:\codetyphon\fpcsrc\rtl\win\sysosh.inc"/>
         <EditorIndex Value="12"/>
@@ -271,10 +349,148 @@
         <Filename Value="Tut04.ppr"/>
         <Caret Line="557" Column="3" TopLine="544"/>
       </Position29>
+=======
+    </Units>
+    <JumpHistory Count="30" HistoryIndex="29">
+      <Position1>
+        <Filename Value="..\..\..\..\Units\dx12.d3dx12.pas"/>
+        <Caret Line="335" Column="39" TopLine="323"/>
+      </Position1>
+      <Position2>
+        <Filename Value="..\..\..\..\Units\dx12.d3dx12.pas"/>
+        <Caret Line="833" Column="34" TopLine="816"/>
+      </Position2>
+      <Position3>
+        <Filename Value="..\..\..\..\Units\dx12.d3dx12.pas"/>
+        <Caret Line="332" Column="67" TopLine="320"/>
+      </Position3>
+      <Position4>
+        <Filename Value="..\..\..\..\Units\dx12.d3dx12.pas"/>
+        <Caret Line="838" Column="38" TopLine="827"/>
+      </Position4>
+      <Position5>
+        <Filename Value="..\..\..\..\Units\dx12.d3dx12.pas"/>
+        <Caret Line="329" Column="71" TopLine="317"/>
+      </Position5>
+      <Position6>
+        <Filename Value="..\..\..\..\Units\dx12.d3dx12.pas"/>
+        <Caret Line="843" Column="36" TopLine="826"/>
+      </Position6>
+      <Position7>
+        <Filename Value="..\..\..\..\Units\dx12.d3dx12.pas"/>
+        <Caret Line="330" Column="73" TopLine="318"/>
+      </Position7>
+      <Position8>
+        <Filename Value="..\..\..\..\Units\dx12.d3dx12.pas"/>
+        <Caret Line="848" Column="30" TopLine="831"/>
+      </Position8>
+      <Position9>
+        <Filename Value="..\..\..\..\Units\dx12.d3dx12.pas"/>
+        <Caret Line="318" Column="69" TopLine="305"/>
+      </Position9>
+      <Position10>
+        <Filename Value="..\..\..\..\Units\dx12.d3dx12.pas"/>
+        <Caret Line="853" Column="34" TopLine="836"/>
+      </Position10>
+      <Position11>
+        <Filename Value="..\..\..\..\Units\dx12.d3dx12.pas"/>
+        <Caret Line="319" Column="78" TopLine="306"/>
+      </Position11>
+      <Position12>
+        <Filename Value="..\..\..\..\Units\dx12.d3dx12.pas"/>
+        <Caret Line="858" Column="37" TopLine="841"/>
+      </Position12>
+      <Position13>
+        <Filename Value="..\..\..\..\Units\dx12.d3dx12.pas"/>
+        <Caret Line="320" Column="76" TopLine="307"/>
+      </Position13>
+      <Position14>
+        <Filename Value="..\..\..\..\Units\dx12.d3dx12.pas"/>
+        <Caret Line="863" Column="32" TopLine="852"/>
+      </Position14>
+      <Position15>
+        <Filename Value="..\..\..\..\Units\dx12.d3dx12.pas"/>
+        <Caret Line="333" Column="56" TopLine="321"/>
+      </Position15>
+      <Position16>
+        <Filename Value="..\..\..\..\Units\dx12.d3dx12.pas"/>
+        <Caret Line="868" Column="31" TopLine="860"/>
+      </Position16>
+      <Position17>
+        <Filename Value="..\..\..\..\Units\dx12.d3dx12.pas"/>
+        <Caret Line="331" Column="46" TopLine="319"/>
+      </Position17>
+      <Position18>
+        <Filename Value="..\..\..\..\Units\dx12.d3dx12.pas"/>
+        <Caret Line="873" Column="34" TopLine="862"/>
+      </Position18>
+      <Position19>
+        <Filename Value="..\..\..\..\Units\dx12.d3dx12.pas"/>
+        <Caret Line="334" Column="56" TopLine="322"/>
+      </Position19>
+      <Position20>
+        <Filename Value="..\..\..\..\Units\dx12.d3dx12.pas"/>
+        <Caret Line="878" Column="28" TopLine="864"/>
+      </Position20>
+      <Position21>
+        <Filename Value="..\..\..\..\Units\dx12.d3dx12.pas"/>
+        <Caret Line="315" Column="47" TopLine="302"/>
+      </Position21>
+      <Position22>
+        <Filename Value="..\..\..\..\Units\dx12.d3dx12.pas"/>
+        <Caret Line="883" Column="32" TopLine="872"/>
+      </Position22>
+      <Position23>
+        <Filename Value="..\..\..\..\Units\dx12.d3dx12.pas"/>
+        <Caret Line="337" Column="68" TopLine="325"/>
+      </Position23>
+      <Position24>
+        <Filename Value="..\..\..\..\Units\dx12.d3dx12.pas"/>
+        <Caret Line="888" Column="29" TopLine="877"/>
+      </Position24>
+      <Position25>
+        <Filename Value="..\..\..\..\Units\dx12.d3dx12.pas"/>
+        <Caret Line="314" Column="61" TopLine="301"/>
+      </Position25>
+      <Position26>
+        <Filename Value="..\..\..\..\Units\dx12.d3dx12.pas"/>
+        <Caret Line="893" Column="35" TopLine="879"/>
+      </Position26>
+      <Position27>
+        <Filename Value="..\..\..\..\Units\dx12.d3dx12.pas"/>
+        <Caret Line="336" Column="71" TopLine="324"/>
+      </Position27>
+      <Position28>
+        <Filename Value="..\..\..\..\Units\dx12.d3dx12.pas"/>
+        <Caret Line="893" Column="68" TopLine="881"/>
+      </Position28>
+      <Position29>
+        <Filename Value="..\..\..\..\Units\dx12.d3dx12.pas"/>
+        <Caret Line="894" Column="67" TopLine="882"/>
+      </Position29>
+      <Position30>
+        <Filename Value="..\..\..\..\Units\dx12.d3dx12.pas"/>
+        <Caret Line="897" Column="14" TopLine="879"/>
+      </Position30>
+>>>>>>> b2cfe058bdb13a45eaa50038b619b945db579d3e
     </JumpHistory>
     <RunParams>
       <FormatVersion Value="2"/>
       <Modes Count="0" ActiveMode=""/>
     </RunParams>
   </ProjectSession>
+<<<<<<< HEAD
+=======
+  <Debugging>
+    <BreakPoints Count="1">
+      <Item1>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="C:\codetyphon\fpcsrc\rtl\i386\fastmove.inc"/>
+        <Line Value="844"/>
+      </Item1>
+    </BreakPoints>
+  </Debugging>
+>>>>>>> b2cfe058bdb13a45eaa50038b619b945db579d3e
 </CONFIG>
