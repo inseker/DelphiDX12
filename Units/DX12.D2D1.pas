@@ -4034,7 +4034,7 @@ end;
 
 
 function BitmapProperties1(pixelFormat: TD2D1_PIXEL_FORMAT; bitmapOptions: TD2D1_BITMAP_OPTIONS; dpiX: single; dpiY: single;
-    colorContext: ID2D1ColorContext): TD2D1_BITMAP_PROPERTIES1;
+    colorContext: ID2D1ColorContext = nil): TD2D1_BITMAP_PROPERTIES1;
 begin
     Result.bitmapOptions := bitmapOptions;
     Result.colorContext := colorContext;

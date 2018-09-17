@@ -161,7 +161,7 @@ type
         // Creates a 3D 4x4 matrix transform object.
         function CreateMatrixTransform3D(out matrixTransform3D: IDCompositionMatrixTransform3D): HResult; stdcall;
         // Creates a 3D transform object that holds an array of 3D transform objects.
-        function CreateTransform3DGroup(transforms3D: {array size elements} PIDCompositionTransform3D; elements: UINT;
+        function CreateTransform3DGroup(transforms3D: {array size elements} IDCompositionTransform3D; elements: UINT;
             out transform3DGroup: IDCompositionTransform3D): HResult; stdcall;
         // Creates an effect group
         function CreateEffectGroup(out effectGroup: IDCompositionEffectGroup): HResult; stdcall;
@@ -197,16 +197,14 @@ type
 
     IDCompositionVisual = interface(IUnknown)
         ['{4d93059d-097b-4651-9a60-f0f25116e2f3}']
-        // The SetOffsetX (IDCompositionAnimation) and SetOffsetX (float) seems to be shifted in
-        // position in real life, not as shwn in the h.file
         // Animates the value of the OffsetX property.
         function SetOffsetX(animation: IDCompositionAnimation): HResult; stdcall; overload;
         // Changes the value of OffsetX property
         function SetOffsetX(offsetX: single): HResult; stdcall; overload;
         // Animates the value of the OffsetY property.
-        function SetOffsetY(animation: IDCompositionAnimation): HResult; stdcall;  overload;
+        function SetOffsetY(animation: IDCompositionAnimation): HResult; stdcall; overload;
         // Changes the value of OffsetY property
-        function SetOffsetY(offsetY: single): HResult; stdcall;  overload;
+        function SetOffsetY(offsetY: single): HResult; stdcall; overload;
 
 
         // Sets the matrix that modifies the coordinate system of this visual.
@@ -286,14 +284,16 @@ type
 
     IDCompositionTranslateTransform = interface(IDCompositionTransform)
         ['{06791122-C6F0-417d-8323-269E987F5954}']
-        // Changes the value of the OffsetX property.
-        function SetOffsetX(offsetX: single): HResult; stdcall; overload;
         // Animates the value of the OffsetX property.
         function SetOffsetX(animation: IDCompositionAnimation): HResult; stdcall; overload;
-        // Changes the value of the OffsetY property.
-        function SetOffsetY(offsetY: single): HResult; stdcall; overload;
+        // Changes the value of the OffsetX property.
+        function SetOffsetX(offsetX: single): HResult; stdcall; overload;
+
         // Animates the value of the OffsetY property.
         function SetOffsetY(animation: IDCompositionAnimation): HResult; stdcall; overload;
+        // Changes the value of the OffsetY property.
+        function SetOffsetY(offsetY: single): HResult; stdcall; overload;
+
     end;
 
     //+-----------------------------------------------------------------------------
@@ -307,23 +307,27 @@ type
 
     IDCompositionScaleTransform = interface(IDCompositionTransform)
         ['{71FDE914-40EF-45ef-BD51-68B037C339F9}']
+        // Animates the value of the ScaleX property.
+        function SetScaleX(animation: IDCompositionAnimation): HResult; stdcall; overload;
         // Changes the value of the ScaleX property.
         function SetScaleX(scaleX: single): HResult; stdcall;
             overload;
-        // Animates the value of the ScaleX property.
-        function SetScaleX(animation: IDCompositionAnimation): HResult; stdcall; overload;
-        // Changes the value of the ScaleY property.
-        function SetScaleY(scaleY: single): HResult; stdcall; overload;
+
         // Animates the value of the ScaleY property.
         function SetScaleY(animation: IDCompositionAnimation): HResult; stdcall; overload;
-        // Changes the value of the CenterX property.
-        function SetCenterX(centerX: single): HResult; stdcall; overload;
+        // Changes the value of the ScaleY property.
+        function SetScaleY(scaleY: single): HResult; stdcall; overload;
+
         // Animates the value of the CenterX property.
         function SetCenterX(animation: IDCompositionAnimation): HResult; stdcall; overload;
-        // Changes the value of the CenterY property.
-        function SetCenterY(centerY: single): HResult; stdcall; overload;
+        // Changes the value of the CenterX property.
+        function SetCenterX(centerX: single): HResult; stdcall; overload;
+
         // Animates the value of the CenterY property.
         function SetCenterY(animation: IDCompositionAnimation): HResult; stdcall; overload;
+        // Changes the value of the CenterY property.
+        function SetCenterY(centerY: single): HResult; stdcall; overload;
+
     end;
 
     //+-----------------------------------------------------------------------------
@@ -336,18 +340,20 @@ type
     //------------------------------------------------------------------------------
     IDCompositionRotateTransform = interface(IDCompositionTransform)
         ['{641ED83C-AE96-46c5-90DC-32774CC5C6D5}']
-        // Changes the value of the Angle property.
-        function SetAngle(angle: single): HResult; stdcall; overload;
         // Animates the value of the Angle property.
         function SetAngle(animation: IDCompositionAnimation): HResult; stdcall; overload;
-        // Changes the value of the CenterX property.
-        function SetCenterX(centerX: single): HResult; stdcall; overload;
+        // Changes the value of the Angle property.
+        function SetAngle(angle: single): HResult; stdcall; overload;
+
         // Animates the value of the CenterX property.
         function SetCenterX(animation: IDCompositionAnimation): HResult; stdcall; overload;
-        // Changes the value of the CenterY property.
-        function SetCenterY(centerY: single): HResult; stdcall; overload;
+        // Changes the value of the CenterX property.
+        function SetCenterX(centerX: single): HResult; stdcall; overload;
+
         // Animates the value of the CenterY property.
         function SetCenterY(animation: IDCompositionAnimation): HResult; stdcall; overload;
+        // Changes the value of the CenterY property.
+        function SetCenterY(centerY: single): HResult; stdcall; overload;
     end;
 
     //+-----------------------------------------------------------------------------
@@ -361,22 +367,25 @@ type
 
     IDCompositionSkewTransform = interface(IDCompositionTransform)
         ['{E57AA735-DCDB-4c72-9C61-0591F58889EE}']
-        // Changes the value of the AngleX property.
-        function SetAngleX(angleX: single): HResult; stdcall; overload;
         // Animates the value of the AngleX property.
         function SetAngleX(animation: IDCompositionAnimation): HResult; stdcall; overload;
-        // Changes the value of the AngleY property.
-        function SetAngleY(angleY: single): HResult; stdcall; overload;
+        // Changes the value of the AngleX property.
+        function SetAngleX(angleX: single): HResult; stdcall; overload;
+
         // Animates the value of the AngleY property.
         function SetAngleY(animation: IDCompositionAnimation): HResult; stdcall; overload;
-        // Changes the value of the CenterX property.
-        function SetCenterX(centerX: single): HResult; stdcall; overload;
+        // Changes the value of the AngleY property.
+        function SetAngleY(angleY: single): HResult; stdcall; overload;
+
         // Animates the value of the CenterX property.
         function SetCenterX(animation: IDCompositionAnimation): HResult; stdcall; overload;
-        // Changes the value of the CenterY property.
-        function SetCenterY(centerY: single): HResult; stdcall; overload;
+        // Changes the value of the CenterX property.
+        function SetCenterX(centerX: single): HResult; stdcall; overload;
+
         // Animates the value of the CenterY property.
         function SetCenterY(animation: IDCompositionAnimation): HResult; stdcall; overload;
+        // Changes the value of the CenterY property.
+        function SetCenterY(centerY: single): HResult; stdcall; overload;
     end;
 
     //+-----------------------------------------------------------------------------
@@ -391,10 +400,11 @@ type
         ['{16CDFF07-C503-419c-83F2-0965C7AF1FA6}']
         // Changes all values of the matrix of this transform.
         function SetMatrix(const matrix: TD2D_MATRIX_3X2_F): HResult; stdcall;
-        // Changes a single element of the matrix of this transform.
-        function SetMatrixElement(row: integer; column: integer; Value: single): HResult; stdcall; overload;
+
         // Animates a single element of the matrix of this transform.
         function SetMatrixElement(row: integer; column: integer; animation: IDCompositionAnimation): HResult; stdcall; overload;
+        // Changes a single element of the matrix of this transform.
+        function SetMatrixElement(row: integer; column: integer; Value: single): HResult; stdcall; overload;
     end;
 
     //+-----------------------------------------------------------------------------
@@ -407,10 +417,10 @@ type
 
     IDCompositionEffectGroup = interface(IDCompositionEffect)
         ['{A7929A74-E6B2-4bd6-8B95-4040119CA34D}']
-        // Changes the opacity property.
-        function SetOpacity(opacity: single): HResult; stdcall; overload;
         // Animates the opacity property
         function SetOpacity(animation: IDCompositionAnimation): HResult; stdcall; overload;
+        // Changes the opacity property.
+        function SetOpacity(opacity: single): HResult; stdcall; overload;
         // Sets the 3D transform
         function SetTransform3D(transform3D: IDCompositionTransform3D): HResult; stdcall;
     end;
@@ -426,18 +436,20 @@ type
 
     IDCompositionTranslateTransform3D = interface(IDCompositionTransform3D)
         ['{91636D4B-9BA1-4532-AAF7-E3344994D788}']
-        // Changes the value of the OffsetX property.
-        function SetOffsetX(offsetX: single): HResult; stdcall; overload;
         // Animates the value of the OffsetX property.
         function SetOffsetX(animation: IDCompositionAnimation): HResult; stdcall; overload;
-        // Changes the value of the OffsetY property.
-        function SetOffsetY(offsetY: single): HResult; stdcall; overload;
+        // Changes the value of the OffsetX property.
+        function SetOffsetX(offsetX: single): HResult; stdcall; overload;
+
         // Animates the value of the OffsetY property.
         function SetOffsetY(animation: IDCompositionAnimation): HResult; stdcall; overload;
-        // Changes the value of the OffsetZ property.
-        function SetOffsetZ(offsetZ: single): HResult; stdcall; overload;
+        // Changes the value of the OffsetY property.
+        function SetOffsetY(offsetY: single): HResult; stdcall; overload;
+
         // Animates the value of the OffsetZ property.
         function SetOffsetZ(animation: IDCompositionAnimation): HResult; stdcall; overload;
+        // Changes the value of the OffsetZ property.
+        function SetOffsetZ(offsetZ: single): HResult; stdcall; overload;
     end;
 
     //+-----------------------------------------------------------------------------
@@ -451,30 +463,36 @@ type
 
     IDCompositionScaleTransform3D = interface(IDCompositionTransform3D)
         ['{2A9E9EAD-364B-4b15-A7C4-A1997F78B389}']
-        // Changes the value of the ScaleX property.
-        function SetScaleX(scaleX: single): HResult; stdcall; overload;
         // Animates the value of the ScaleX property.
         function SetScaleX(animation: IDCompositionAnimation): HResult; stdcall; overload;
-        // Changes the value of the ScaleY property.
-        function SetScaleY(scaleY: single): HResult; stdcall; overload;
+        // Changes the value of the ScaleX property.
+        function SetScaleX(scaleX: single): HResult; stdcall; overload;
+
         // Animates the value of the ScaleY property.
         function SetScaleY(animation: IDCompositionAnimation): HResult; stdcall; overload;
-        // Changes the value of the ScaleZ property.
-        function SetScaleZ(scaleZ: single): HResult; stdcall; overload;
+        // Changes the value of the ScaleY property.
+        function SetScaleY(scaleY: single): HResult; stdcall; overload;
+
         // Animates the value of the ScaleZ property.
         function SetScaleZ(animation: IDCompositionAnimation): HResult; stdcall; overload;
-        // Changes the value of the CenterX property.
-        function SetCenterX(centerX: single): HResult; stdcall; overload;
+        // Changes the value of the ScaleZ property.
+        function SetScaleZ(scaleZ: single): HResult; stdcall; overload;
+
+
         // Animates the value of the CenterX property.
         function SetCenterX(animation: IDCompositionAnimation): HResult; stdcall; overload;
-        // Changes the value of the CenterY property.
-        function SetCenterY(centerY: single): HResult; stdcall; overload;
+        // Changes the value of the CenterX property.
+        function SetCenterX(centerX: single): HResult; stdcall; overload;
+
         // Animates the value of the CenterY property.
         function SetCenterY(animation: IDCompositionAnimation): HResult; stdcall; overload;
-        // Changes the value of the CenterZ property.
-        function SetCenterZ(centerZ: single): HResult; stdcall; overload;
+        // Changes the value of the CenterY property.
+        function SetCenterY(centerY: single): HResult; stdcall; overload;
+
         // Animates the value of the CenterZ property.
         function SetCenterZ(animation: IDCompositionAnimation): HResult; stdcall; overload;
+        // Changes the value of the CenterZ property.
+        function SetCenterZ(centerZ: single): HResult; stdcall; overload;
     end;
 
     //+-----------------------------------------------------------------------------
@@ -489,34 +507,40 @@ type
 
     IDCompositionRotateTransform3D = interface(IDCompositionTransform3D)
         ['{D8F5B23F-D429-4a91-B55A-D2F45FD75B18}']
-        // Changes the value of the Angle property.
-        function SetAngle(angle: single): HResult; stdcall; overload;
         // Animates the value of the Angle property.
         function SetAngle(animation: IDCompositionAnimation): HResult; stdcall; overload;
-        // Changes the value of the AxisX property.
-        function SetAxisX(axisX: single): HResult; stdcall; overload;
+        // Changes the value of the Angle property.
+        function SetAngle(angle: single): HResult; stdcall; overload;
+
         // Animates the value of the AxisX property.
         function SetAxisX(animation: IDCompositionAnimation): HResult; stdcall; overload;
-        // Changes the value of the AxisY property.
-        function SetAxisY(axisY: single): HResult; stdcall; overload;
+        // Changes the value of the AxisX property.
+        function SetAxisX(axisX: single): HResult; stdcall; overload;
+
         // Animates the value of the AxisY property.
         function SetAxisY(animation: IDCompositionAnimation): HResult; stdcall; overload;
-        // Changes the value of the AxisZ property.
-        function SetAxisZ(axisZ: single): HResult; stdcall; overload;
+        // Changes the value of the AxisY property.
+        function SetAxisY(axisY: single): HResult; stdcall; overload;
+
         // Animates the value of the AxisZ property.
         function SetAxisZ(animation: IDCompositionAnimation): HResult; stdcall; overload;
-        // Changes the value of the CenterX property.
-        function SetCenterX(centerX: single): HResult; stdcall; overload;
+        // Changes the value of the AxisZ property.
+        function SetAxisZ(axisZ: single): HResult; stdcall; overload;
+
         // Animates the value of the CenterX property.
         function SetCenterX(animation: IDCompositionAnimation): HResult; stdcall; overload;
-        // Changes the value of the CenterY property.
-        function SetCenterY(centerY: single): HResult; stdcall; overload;
+        // Changes the value of the CenterX property.
+        function SetCenterX(centerX: single): HResult; stdcall; overload;
+
         // Animates the value of the CenterY property.
         function SetCenterY(animation: IDCompositionAnimation): HResult; stdcall; overload;
-        // Changes the value of the CenterZ property.
-        function SetCenterZ(centerZ: single): HResult; stdcall; overload;
+        // Changes the value of the CenterY property.
+        function SetCenterY(centerY: single): HResult; stdcall; overload;
+
         // Animates the value of the CenterZ property.
         function SetCenterZ(animation: IDCompositionAnimation): HResult; stdcall; overload;
+        // Changes the value of the CenterZ property.
+        function SetCenterZ(centerZ: single): HResult; stdcall; overload;
     end;
 
     //+-----------------------------------------------------------------------------
@@ -532,10 +556,11 @@ type
         ['{4B3363F0-643B-41b7-B6E0-CCF22D34467C}']
         // Changes all values of the matrix of this transform.
         function SetMatrix(const matrix: TD3DMATRIX): HResult; stdcall;
-        // Changes a single element of the matrix of this transform.
-        function SetMatrixElement(row: integer; column: integer; Value: single): HResult; stdcall; overload;
+
         // Animates a single element of the matrix of this transform.
         function SetMatrixElement(row: integer; column: integer; animation: IDCompositionAnimation): HResult; stdcall; overload;
+        // Changes a single element of the matrix of this transform.
+        function SetMatrixElement(row: integer; column: integer; Value: single): HResult; stdcall; overload;
     end;
 
 
@@ -562,70 +587,81 @@ type
 
     IDCompositionRectangleClip = interface(IDCompositionClip)
         ['{9842AD7D-D9CF-4908-AED7-48B51DA5E7C2}']
-        // Changes the value of the Left property.
-        function SetLeft(left: single): HResult; stdcall; overload;
         // Animates the value of the Left property.
         function SetLeft(animation: IDCompositionAnimation): HResult; stdcall; overload;
-        // Changes the value of the Top property.
-        function SetTop(top: single): HResult; stdcall; overload;
+        // Changes the value of the Left property.
+        function SetLeft(left: single): HResult; stdcall; overload;
+
         // Animates the value of the Top property.
         function SetTop(animation: IDCompositionAnimation): HResult; stdcall; overload;
-        // Changes the value of the Right property.
-        function SetRight(right: single): HResult; stdcall; overload;
+        // Changes the value of the Top property.
+        function SetTop(top: single): HResult; stdcall; overload;
+
         // Animates the value of the Right property.
         function SetRight(animation: IDCompositionAnimation): HResult; stdcall; overload;
-        // Changes the value of the Bottom property.
-        function SetBottom(bottom: single): HResult; stdcall; overload;
+        // Changes the value of the Right property.
+        function SetRight(right: single): HResult; stdcall; overload;
+
         // Animates the value of the Bottom property.
         function SetBottom(animation: IDCompositionAnimation): HResult; stdcall; overload;
-        // Changes the value of the x radius of the ellipse that rounds the
-        // top-left corner of the clip.
-        function SetTopLeftRadiusX(radius: single): HResult; stdcall; overload;
+        // Changes the value of the Bottom property.
+        function SetBottom(bottom: single): HResult; stdcall; overload;
+
         // Animates the value of the x radius of the ellipse that rounds the
         // top-left corner of the clip.
         function SetTopLeftRadiusX(animation: IDCompositionAnimation): HResult; stdcall; overload;
-        // Changes the value of the y radius of the ellipse that rounds the
+        // Changes the value of the x radius of the ellipse that rounds the
         // top-left corner of the clip.
-        function SetTopLeftRadiusY(radius: single): HResult; stdcall; overload;
+        function SetTopLeftRadiusX(radius: single): HResult; stdcall; overload;
+
         // Animates the value of the y radius of the ellipse that rounds the
         // top-left corner of the clip.
         function SetTopLeftRadiusY(animation: IDCompositionAnimation): HResult; stdcall; overload;
-        // Changes the value of the x radius of the ellipse that rounds the
-        // top-right corner of the clip.
-        function SetTopRightRadiusX(radius: single): HResult; stdcall; overload;
+        // Changes the value of the y radius of the ellipse that rounds the
+        // top-left corner of the clip.
+        function SetTopLeftRadiusY(radius: single): HResult; stdcall; overload;
+
         // Animates the value of the x radius of the ellipse that rounds the
         // top-right corner of the clip.
         function SetTopRightRadiusX(animation: IDCompositionAnimation): HResult; stdcall; overload;
-        // Changes the value of the y radius of the ellipse that rounds the
+        // Changes the value of the x radius of the ellipse that rounds the
         // top-right corner of the clip.
-        function SetTopRightRadiusY(radius: single): HResult; stdcall; overload;
+        function SetTopRightRadiusX(radius: single): HResult; stdcall; overload;
+
         // Animates the value of the y radius of the ellipse that rounds the
         // top-right corner of the clip.
         function SetTopRightRadiusY(animation: IDCompositionAnimation): HResult; stdcall; overload;
-        // Changes the value of the x radius of the ellipse that rounds the
-        // bottom-left corner of the clip.
-        function SetBottomLeftRadiusX(radius: single): HResult; stdcall; overload;
+        // Changes the value of the y radius of the ellipse that rounds the
+        // top-right corner of the clip.
+        function SetTopRightRadiusY(radius: single): HResult; stdcall; overload;
+
         // Animates the value of the x radius of the ellipse that rounds the
         // bottom-left corner of the clip.
         function SetBottomLeftRadiusX(animation: IDCompositionAnimation): HResult; stdcall; overload;
-        // Changes the value of the y radius of the ellipse that rounds the
+        // Changes the value of the x radius of the ellipse that rounds the
         // bottom-left corner of the clip.
-        function SetBottomLeftRadiusY(radius: single): HResult; stdcall; overload;
+        function SetBottomLeftRadiusX(radius: single): HResult; stdcall; overload;
+
         // Animates the value of the y radius of the ellipse that rounds the
         // bottom-left corner of the clip.
         function SetBottomLeftRadiusY(animation: IDCompositionAnimation): HResult; stdcall; overload;
-        // Changes the value of the x radius of the ellipse that rounds the
-        // bottom-right corner of the clip.
-        function SetBottomRightRadiusX(radius: single): HResult; stdcall; overload;
+        // Changes the value of the y radius of the ellipse that rounds the
+        // bottom-left corner of the clip.
+        function SetBottomLeftRadiusY(radius: single): HResult; stdcall; overload;
+
         // Animates the value of the x radius of the ellipse that rounds the
         // bottom-right corner of the clip.
         function SetBottomRightRadiusX(animation: IDCompositionAnimation): HResult; stdcall; overload;
-        // Changes the value of the y radius of the ellipse that rounds the
+        // Changes the value of the x radius of the ellipse that rounds the
         // bottom-right corner of the clip.
-        function SetBottomRightRadiusY(radius: single): HResult; stdcall; overload;
+        function SetBottomRightRadiusX(radius: single): HResult; stdcall; overload;
+
         // Animates the value of the y radius of the ellipse that rounds the
         // bottom-right corner of the clip.
         function SetBottomRightRadiusY(animation: IDCompositionAnimation): HResult; stdcall; overload;
+        // Changes the value of the y radius of the ellipse that rounds the
+        // bottom-right corner of the clip.
+        function SetBottomRightRadiusY(radius: single): HResult; stdcall; overload;
     end;
 
     //+-----------------------------------------------------------------------------
@@ -832,18 +868,21 @@ type
         ['{2775F462-B6C1-4015-B0BE-B3E7D6A4976D}']
         // Sets depth mode property associated with this visual
         function SetDepthMode(mode: TDCOMPOSITION_DEPTH_MODE): HResult; stdcall;
-        // Changes the value of OffsetZ property.
-        function SetOffsetZ(offsetZ: single): HResult; stdcall; overload;
         // Animates the value of the OffsetZ property.
         function SetOffsetZ(animation: IDCompositionAnimation): HResult; stdcall; overload;
-        // Changes the value of the Opacity property.
-        function SetOpacity(opacity: single): HResult; stdcall; overload;
+        // Changes the value of OffsetZ property.
+        function SetOffsetZ(offsetZ: single): HResult; stdcall; overload;
+
         // Animates the value of the Opacity property.
         function SetOpacity(animation: IDCompositionAnimation): HResult; stdcall; overload;
-        // Sets the matrix that modifies the coordinate system of this visual.
-        function SetTransform(const matrix: TD2D_MATRIX_4X4_F): HResult; stdcall; overload;
+        // Changes the value of the Opacity property.
+        function SetOpacity(opacity: single): HResult; stdcall; overload;
+
         // Sets the transformation object that modifies the coordinate system of this visual.
         function SetTransform(transform: IDCompositionTransform3D): HResult; stdcall; overload;
+        // Sets the matrix that modifies the coordinate system of this visual.
+        function SetTransform(const matrix: TD2D_MATRIX_4X4_F): HResult; stdcall; overload;
+
         // Changes the value of the Visible property
         function SetVisible(Visible: boolean): HResult; stdcall;
     end;
@@ -897,8 +936,9 @@ type
     IDCompositionGaussianBlurEffect = interface(IDCompositionFilterEffect)
         ['{45D4D0B7-1BD4-454E-8894-2BFA68443033}']
         // Changes the amount of blur to be applied.
-        function SetStandardDeviation(amount: single): HResult; stdcall; overload;
         function SetStandardDeviation(animation: IDCompositionAnimation): HResult; stdcall; overload;
+
+        function SetStandardDeviation(amount: single): HResult; stdcall; overload;
         // Changes border mode (see D2D1_GAUSSIANBLUR)
         function SetBorderMode(mode: TD2D1_BORDER_MODE): HResult; stdcall;
     end;
